@@ -14,8 +14,7 @@ abstract class CoroutineViewModel : ViewModel(),
     override val coroutineContext: CoroutineContext
         get() = Dispatchers.Main + job
 
-    override fun onCleared() {
+    final override fun onCleared() {
         job.cancel()
-        super.onCleared()
     }
 }
